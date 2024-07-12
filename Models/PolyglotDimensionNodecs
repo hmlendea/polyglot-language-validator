@@ -1,0 +1,14 @@
+using System.Collections.Generic;
+using System.Xml.Serialization;
+
+namespace PolyglotTester.Models
+{
+    public sealed class PolyglotDimensionNode
+    {
+        [XmlElement("dimensionId")]
+        public int Id { get; set; }
+
+        [XmlElement("dimensionName")]
+        public string Name { get; set; }
+    }
+}

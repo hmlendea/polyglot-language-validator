@@ -10,5 +10,8 @@ namespace PolyglotTester.Models
 
         [XmlElement("lexicon")]
         public PolyglotLexicon Lexicon { get; set; }
+
+        [XmlElement("declensionCollection")]
+        public PolyglotDeclesionCollection DeclesionCollection { get; set; }
     }
 }
