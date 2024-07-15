@@ -22,6 +22,8 @@ namespace PolyglotTester
             Console.WriteLine(language.GetWord("knee", "noun"));
             Console.WriteLine(language.GetWord("run", "verb"));
 
+            language.Test();
+
             BuildServiceProvider();
         }
 

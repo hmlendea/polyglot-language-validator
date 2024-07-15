@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace PolyglotTester.Models
+namespace PolyglotTester.Models.Polyglot
 {
     public sealed class PolyglotDeclesionNode
     {
@@ -12,5 +13,8 @@ namespace PolyglotTester.Models
 
         [XmlElement("declensionRelatedId")]
         public int PartOfSpeechId { get; set; }
+
+        [XmlElement("dimensionNode")]
+        public List<PolyglotDimensionNode> Dimensions { get; set; }
     }
 }

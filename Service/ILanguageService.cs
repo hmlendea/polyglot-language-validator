@@ -1,4 +1,4 @@
-using PolyglotTester.Models;
+using PolyglotTester.Models.Polyglot;
 
 namespace PolyglotTester.Service
 {
@@ -9,5 +9,7 @@ namespace PolyglotTester.Service
         public string GetWord(string localWord, string partOfSpeech);
 
         public PolyglotClass GetPartOfSpeech(int id);
+
+        public void Test();
     }
 }

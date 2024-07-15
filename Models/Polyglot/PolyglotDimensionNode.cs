@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace PolyglotTester.Models
+namespace PolyglotTester.Models.Polyglot
 {
     public sealed class PolyglotDimensionNode
     {
