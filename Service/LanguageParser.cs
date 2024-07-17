@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
+using PolyglotLanguageValidator.Configuration;
 using PolyglotLanguageValidator.Models.Polyglot;
 
 namespace PolyglotLanguageValidator.Service
@@ -11,9 +12,9 @@ namespace PolyglotLanguageValidator.Service
     {
         readonly PolyglotDictionary language;
 
-        public LanguageParser()
+        public LanguageParser(InputSettings inputSettings)
         {
-            language = LoadLanguage("/home/horatiu/PolyGlot/nucian-language/PGDictionary.xml");
+            language = LoadLanguage(inputSettings.PolyglotDictionaryFilePath);
         }
 
         public string GetWord(string localWord, int partOfSpeechId)
