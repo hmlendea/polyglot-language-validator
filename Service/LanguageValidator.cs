@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NuciDAL.Repositories;
-using PolyglotTester.Exceptions;
-using PolyglotTester.Models;
+using PolyglotLanguageValidator.Exceptions;
+using PolyglotLanguageValidator.Models;
 
-namespace PolyglotTester.Service
+namespace PolyglotLanguageValidator.Service
 {
-    public sealed class LanguageTester(
+    public sealed class LanguageValidator(
         IDeclesionBuilder declesionService,
-        IRepository<Sentence> sentenceRepository) : ILanguageTester
+        IRepository<Sentence> sentenceRepository) : ILanguageValidator
     {
         public void Test()
         {

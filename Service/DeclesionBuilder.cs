@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using NuciDAL.Repositories;
-using PolyglotTester.Models;
-using PolyglotTester.Models.Polyglot;
+using PolyglotLanguageValidator.Models;
+using PolyglotLanguageValidator.Models.Polyglot;
 
-namespace PolyglotTester.Service
+namespace PolyglotLanguageValidator.Service
 {
     public sealed class DeclesionBuilder(
         ILanguageParser languageService,

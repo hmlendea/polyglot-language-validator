@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace PolyglotTester.Models.Polyglot
+namespace PolyglotLanguageValidator.Models.Polyglot
 {
     [XmlRoot("dictionary")]
     public sealed class PolyglotDictionary

@@ -1,6 +1,6 @@
-using PolyglotTester.Models;
+using PolyglotLanguageValidator.Models;
 
-namespace PolyglotTester.Service
+namespace PolyglotLanguageValidator.Service
 {
     public interface IDeclesionBuilder
     {

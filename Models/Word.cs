@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using NuciDAL.DataObjects;
 
-namespace PolyglotTester.Models
+namespace PolyglotLanguageValidator.Models
 {
     public sealed class Word : EntityBase
     {

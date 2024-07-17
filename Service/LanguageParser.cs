@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using PolyglotTester.Models.Polyglot;
+using PolyglotLanguageValidator.Models.Polyglot;
 
-namespace PolyglotTester.Service
+namespace PolyglotLanguageValidator.Service
 {
     public sealed class LanguageParser : ILanguageParser
     {

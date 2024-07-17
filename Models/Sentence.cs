@@ -1,6 +1,6 @@
 using NuciDAL.DataObjects;
 
-namespace PolyglotTester.Models
+namespace PolyglotLanguageValidator.Models
 {
     public sealed class Sentence : EntityBase
     {

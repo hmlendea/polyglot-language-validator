@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using NuciDAL.Repositories;
-using PolyglotTester.Models;
-using PolyglotTester.Service;
+using PolyglotLanguageValidator.Models;
+using PolyglotLanguageValidator.Service;
 
-namespace PolyglotTester
+namespace PolyglotLanguageValidator
 {
     public class Program
     {
@@ -18,11 +18,11 @@ namespace PolyglotTester
         {
             BuildServiceProvider();
 
-            ILanguageTester tester = serviceProvider.GetService<ILanguageTester>();
+            ILanguageValidator validator = serviceProvider.GetService<ILanguageValidator>();
 
             try
             {
-                tester.Test();
+                validator.Test();
             }
             catch (AggregateException exception)
             {
@@ -40,7 +40,7 @@ namespace PolyglotTester
             serviceProvider = new ServiceCollection()
                 .AddSingleton<IDeclesionBuilder, DeclesionBuilder>()
                 .AddSingleton<ILanguageParser, LanguageParser>()
-                .AddSingleton<ILanguageTester, LanguageTester>()
+                .AddSingleton<ILanguageValidator, LanguageValidator>()
                 .AddSingleton<IRepository<Word>>(x => new JsonRepository<Word>("/home/horatiu/PolyGlot/nucian-language/words.json"))
                 .AddSingleton<IRepository<Sentence>>(x => new JsonRepository<Sentence>("/home/horatiu/PolyGlot/nucian-language/sentences.json"))
                 .BuildServiceProvider();

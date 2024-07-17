@@ -1,6 +1,6 @@
 using System;
 
-namespace PolyglotTester.Exceptions
+namespace PolyglotLanguageValidator.Exceptions
 {
     public class MismatchingValueException : Exception
     {

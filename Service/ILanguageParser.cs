@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using PolyglotTester.Models.Polyglot;
+using PolyglotLanguageValidator.Models.Polyglot;
 
-namespace PolyglotTester.Service
+namespace PolyglotLanguageValidator.Service
 {
     public interface ILanguageParser
     {

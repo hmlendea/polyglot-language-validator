@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>PolyglotTester</RootNamespace>
+    <RootNamespace>PolyglotLanguageValidator</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
