@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using NuciDAL.DataObjects;
 
 namespace PolyglotTester.Models
 {
-    public sealed class DeclesedWord
+    public sealed class Word : EntityBase
     {
         public string LocalWord { get; set; }
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
+using NuciDAL.Repositories;
+using PolyglotTester.Models;
 using PolyglotTester.Service;
 
 namespace PolyglotTester
@@ -16,13 +18,8 @@ namespace PolyglotTester
         {
             BuildServiceProvider();
 
-            ILanguageService language = serviceProvider.GetService<ILanguageService>();
-            language.Load("/home/horatiu/PolyGlot/nucian-language/PGDictionary.xml");
-
-            Console.WriteLine(language.GetWord("knee", "noun"));
-            Console.WriteLine(language.GetWord("run", "verb"));
-
-            language.Test();
+            ILanguageTester tester = serviceProvider.GetService<ILanguageTester>();
+            tester.Test();
 
             BuildServiceProvider();
         }
@@ -30,7 +27,10 @@ namespace PolyglotTester
         static void BuildServiceProvider()
         {
             serviceProvider = new ServiceCollection()
-                .AddSingleton<ILanguageService, LanguageService>()
+                .AddSingleton<IDeclesionBuilder, DeclesionBuilder>()
+                .AddSingleton<ILanguageParser, LanguageParser>()
+                .AddSingleton<ILanguageTester, LanguageTester>()
+                .AddSingleton<IRepository<Word>>(x => new JsonRepository<Word>("/home/horatiu/PolyGlot/nucian-language/declesedWords.json"))
                 .BuildServiceProvider();
         }
     }
