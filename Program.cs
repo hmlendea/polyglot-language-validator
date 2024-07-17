@@ -19,9 +19,20 @@ namespace PolyglotTester
             BuildServiceProvider();
 
             ILanguageTester tester = serviceProvider.GetService<ILanguageTester>();
-            tester.Test();
 
-            BuildServiceProvider();
+            try
+            {
+                tester.Test();
+            }
+            catch (AggregateException exception)
+            {
+                foreach (Exception innerException in exception.InnerExceptions)
+                {
+                    Console.WriteLine(innerException.Message);
+                }
+
+                Environment.Exit(1);
+            }
         }
 
         static void BuildServiceProvider()
