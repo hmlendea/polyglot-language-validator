@@ -1,1 +1,1 @@
-[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html)
+[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html) [![Build Status](https://github.com/hmlendea/polyglot-tester/actions/workflows/dotnet.yml/badge.svg)](https://github.com/hmlendea/polyglot-tester/actions/workflows/dotnet.yml)  [![Latest GitHub release](https://img.shields.io/github/v/release/hmlendea/polyglot-tester)](https://github.com/hmlendea/polyglot-tester/releases/latest)
