@@ -1,14 +1,16 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
-using System.Xml.Serialization;
-using PolyglotTester.Models;
+using Microsoft.Extensions.DependencyInjection;
+using NuciDAL.Repositories;
+using PolyglotLanguageValidator.Configuration;
+using PolyglotLanguageValidator.Models;
+using PolyglotLanguageValidator.Service;
 
-namespace PolyglotTester
+namespace PolyglotLanguageValidator
 {
     public class Program
     {
-        public static IServiceProvider ServiceProvider;
+        static IServiceProvider serviceProvider;
+        static InputSettings inputSettings;
 
         /// <summary>
         /// The entry point of the program, where the program control starts and ends.
@@ -16,32 +18,37 @@ namespace PolyglotTester
         /// <param name="args">The command line arguments.</param>
         public static void Main(string[] args)
         {
-            string xml = File.ReadAllText("/home/horatiu/PolyGlot/nucian-language/PGDictionary.xml");
-            XmlSerializer serializer = new(typeof(PolyglotDictionary));
-
-            using (StringReader reader = new(xml))
-            {
-                PolyglotDictionary dictionary = (PolyglotDictionary)serializer.Deserialize(reader);
-
-                PrintWordFor(dictionary, "noun", "knee");
-                PrintWordFor(dictionary, "verb", "run");
-            }
+            inputSettings = new InputSettings(args);
 
             BuildServiceProvider();
+
+            ILanguageValidator validator = serviceProvider.GetService<ILanguageValidator>();
+
+            try
+            {
+                validator.Test();
+            }
+            catch (AggregateException exception)
+            {
+                foreach (Exception innerException in exception.InnerExceptions)
+                {
+                    Console.WriteLine(innerException.Message);
+                }
+
+                Environment.Exit(1);
+            }
         }
 
         static void BuildServiceProvider()
         {
-        }
-
-        static void PrintWordFor(PolyglotDictionary dictionary, string partOfSpeech, string englishWord)
-        {
-            PolyglotClass partOfSpeechClass = dictionary.PartsOfSpeech.Classes.First(x => x.ClassName.Equals(partOfSpeech));
-            PolyglotWord word = dictionary.Lexicon.Words.First(x =>
-                x.WordTypeId.Equals(partOfSpeechClass.ClassId) &&
-                x.LocalWord.Split(',').Select(x => x.Trim()).Contains(englishWord));
-
-            Console.WriteLine($"{englishWord} ({partOfSpeech}) = {word.ConstructedWord}");
+            serviceProvider = new ServiceCollection()
+                .AddSingleton(inputSettings)
+                .AddSingleton<IDeclesionBuilder, DeclesionBuilder>()
+                .AddSingleton<ILanguageParser, LanguageParser>()
+                .AddSingleton<ILanguageValidator, LanguageValidator>()
+                .AddSingleton<IRepository<Word>>(x => new JsonRepository<Word>(inputSettings.WordsFilePath))
+                .AddSingleton<IRepository<Sentence>>(x => new JsonRepository<Sentence>(inputSettings.SentencesFilePath))
+                .BuildServiceProvider();
         }
     }
 }

@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace PolyglotTester.Models
+namespace PolyglotLanguageValidator.Models.Polyglot
 {
     public sealed class PolyglotWord
     {

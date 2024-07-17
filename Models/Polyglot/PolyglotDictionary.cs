@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace PolyglotTester.Models
+namespace PolyglotLanguageValidator.Models.Polyglot
 {
     [XmlRoot("dictionary")]
     public sealed class PolyglotDictionary
@@ -10,5 +10,8 @@ namespace PolyglotTester.Models
 
         [XmlElement("lexicon")]
         public PolyglotLexicon Lexicon { get; set; }
+
+        [XmlElement("declensionCollection")]
+        public PolyglotDeclesionCollection DeclesionCollection { get; set; }
     }
 }

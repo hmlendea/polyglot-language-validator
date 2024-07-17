@@ -1,14 +1,14 @@
 using System.Xml.Serialization;
 
-namespace PolyglotTester.Models
+namespace PolyglotLanguageValidator.Models.Polyglot
 {
     public sealed class PolyglotClass
     {
         [XmlElement("classId")]
-        public int ClassId { get; set; }
+        public int Id { get; set; }
 
         [XmlElement("className")]
-        public string ClassName { get; set; }
+        public string Name { get; set; }
 
         [XmlElement("classNotes")]
         public string ClassNotes { get; set; }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace PolyglotTester.Models
+namespace PolyglotLanguageValidator.Models.Polyglot
 {
     public sealed class PolyglotLexicon
     {
