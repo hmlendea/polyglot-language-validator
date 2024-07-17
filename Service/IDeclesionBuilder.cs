@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using PolyglotTester.Models;
 
 namespace PolyglotTester.Service
@@ -7,6 +6,8 @@ namespace PolyglotTester.Service
     {
         public string GetWord(Word word);
 
-        public string GetSentence(IEnumerable<string> wordIds);
+        public string GetSentence(string sentence);
+
+        public string GetSentence(params string[] words);
     }
 }

@@ -39,11 +39,14 @@ namespace PolyglotTester.Service
             return declesedWord;
         }
 
-        public string GetSentence(IEnumerable<string> wordIds)
+        public string GetSentence(string sentence)
+            => GetSentence(sentence.Split(' '));
+
+        public string GetSentence(params string[] words)
         {
             IList<string> sentenceWords = [];
 
-            foreach (var declesedWordId in wordIds)
+            foreach (var declesedWordId in words)
             {
                 Word declesedWord = declesedWordsRepository.Get(declesedWordId);
                 sentenceWords.Add(GetWord(declesedWord));

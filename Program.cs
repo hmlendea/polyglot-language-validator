@@ -30,7 +30,8 @@ namespace PolyglotTester
                 .AddSingleton<IDeclesionBuilder, DeclesionBuilder>()
                 .AddSingleton<ILanguageParser, LanguageParser>()
                 .AddSingleton<ILanguageTester, LanguageTester>()
-                .AddSingleton<IRepository<Word>>(x => new JsonRepository<Word>("/home/horatiu/PolyGlot/nucian-language/declesedWords.json"))
+                .AddSingleton<IRepository<Word>>(x => new JsonRepository<Word>("/home/horatiu/PolyGlot/nucian-language/words.json"))
+                .AddSingleton<IRepository<Sentence>>(x => new JsonRepository<Sentence>("/home/horatiu/PolyGlot/nucian-language/sentences.json"))
                 .BuildServiceProvider();
         }
     }
