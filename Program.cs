@@ -46,8 +46,8 @@ namespace PolyglotLanguageValidator
                 .AddSingleton<IDeclesionBuilder, DeclesionBuilder>()
                 .AddSingleton<ILanguageParser, LanguageParser>()
                 .AddSingleton<ILanguageValidator, LanguageValidator>()
-                .AddSingleton<IRepository<Word>>(x => new JsonRepository<Word>(inputSettings.WordsFilePath))
-                .AddSingleton<IRepository<Sentence>>(x => new JsonRepository<Sentence>(inputSettings.SentencesFilePath))
+                .AddSingleton<IFileRepository<Word>>(x => new JsonRepository<Word>(inputSettings.WordsFilePath))
+                .AddSingleton<IFileRepository<Sentence>>(x => new JsonRepository<Sentence>(inputSettings.SentencesFilePath))
                 .BuildServiceProvider();
         }
     }
