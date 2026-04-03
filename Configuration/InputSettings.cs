@@ -1,14 +1,22 @@
-using NuciCLI;
+using System.Collections.Generic;
+using NuciCLI.Arguments;
 
 namespace PolyglotLanguageValidator.Configuration
 {
     public sealed class InputSettings
     {
-        static readonly string[] PolyglotDictionaryFilePathOptions = ["-d", "--dictionary"];
+        const string PolyglotDictionaryArgumentName = "dictionary";
 
-        static readonly string[] WordsFilePathOptions = ["-w", "--words"];
+        const string WordsArgumentName = "words";
 
-        static readonly string[] SentencesFilePathOptions = ["-s", "--sentences"];
+        const string SentencesArgumentName = "sentences";
+
+        static readonly IReadOnlyDictionary<string, string> ArgumentAliases = new Dictionary<string, string>
+        {
+            ["-d"] = $"--{PolyglotDictionaryArgumentName}",
+            ["-w"] = $"--{WordsArgumentName}",
+            ["-s"] = $"--{SentencesArgumentName}"
+        };
 
         public string PolyglotDictionaryFilePath { get; set; }
 
@@ -18,9 +26,32 @@ namespace PolyglotLanguageValidator.Configuration
 
         public InputSettings(string[] args)
         {
-            PolyglotDictionaryFilePath = CliArgumentsReader.GetOptionValue(args, PolyglotDictionaryFilePathOptions);
-            WordsFilePath = CliArgumentsReader.GetOptionValue(args, WordsFilePathOptions);
-            SentencesFilePath = CliArgumentsReader.TryGetOptionValue(args, SentencesFilePathOptions);
+            ArgumentParser parser = new();
+            parser.AddArgument(PolyglotDictionaryArgumentName, required: true);
+            parser.AddArgument(WordsArgumentName, required: true);
+            parser.AddArgument(SentencesArgumentName, defaultValue: null);
+
+            ArgumentsCollection parsedArguments = parser.ParseArgs(NormalizeArguments(args));
+
+            PolyglotDictionaryFilePath = parsedArguments.Get<string>(PolyglotDictionaryArgumentName);
+            WordsFilePath = parsedArguments.Get<string>(WordsArgumentName);
+            SentencesFilePath = parsedArguments.Has(SentencesArgumentName)
+                ? parsedArguments.Get<string>(SentencesArgumentName)
+                : null;
+        }
+
+        static string[] NormalizeArguments(string[] args)
+        {
+            List<string> normalizedArguments = [];
+
+            foreach (string arg in args)
+            {
+                normalizedArguments.Add(ArgumentAliases.TryGetValue(arg, out string normalizedArgument)
+                    ? normalizedArgument
+                    : arg);
+            }
+
+            return [.. normalizedArguments];
         }
     }
 }
