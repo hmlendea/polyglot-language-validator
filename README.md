@@ -214,6 +214,8 @@ Run the NUnit unit-test project with:
 
 ```bash
  dotnet test PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitTests.csproj
+```
+
 ## Contributing
 
 Contributions are welcome.
