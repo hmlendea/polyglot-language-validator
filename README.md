@@ -210,14 +210,10 @@ dotnet run --project PolyglotLanguageValidator.csproj
 
 ### Test
 
-There is currently no test project in this repository.
-
-If you add one later, run:
+Run the NUnit unit-test project with:
 
 ```bash
-dotnet test
-```
-
+ dotnet test PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitTests.csproj
 ## Contributing
 
 Contributions are welcome.
