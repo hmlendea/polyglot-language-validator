@@ -226,6 +226,10 @@ When contributing:
 - update the documentation when behaviour changes
 - include tests for any new behaviour
 
+## Documentation
+
+- [Documentation index](docs/INDEX.md) — Complete documentation catalogue
+
 ## Related Projects
 
 - [Polyglot Language Validator](https://github.com/hmlendea/polyglot-language-validator) for the validator utility
