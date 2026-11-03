@@ -3,7 +3,7 @@
 ## Basic validation
 
 ```bash
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   --dictionary dictionary.xml \
   --words words.json \
   --sentences sentences.json
@@ -12,7 +12,7 @@ dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj --
 ## With absolute paths
 
 ```bash
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   --dictionary /home/user/conlang/dictionary.xml \
   --words /home/user/conlang/words.json \
   --sentences /home/user/conlang/sentences.json
@@ -21,7 +21,7 @@ dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj --
 ## Using aliases
 
 ```bash
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   -d dictionary.xml \
   -w words.json \
   -s sentences.json
@@ -30,7 +30,7 @@ dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj --
 ## Mixed aliases and full names
 
 ```bash
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   -d dictionary.xml \
   --words words.json \
   -s sentences.json
@@ -39,7 +39,7 @@ dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj --
 ## Equals syntax
 
 ```bash
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   --dictionary=dictionary.xml \
   --words=words.json \
   --sentences=sentences.json
@@ -65,7 +65,7 @@ jobs:
         run: dotnet build PolyglotLanguageValidator.slnx
       - name: Validate
         run: |
-          dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+          dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
             --dictionary test-data/dictionary.xml \
             --words test-data/words.json \
             --sentences test-data/sentences.json
@@ -80,7 +80,7 @@ jobs:
 for dict in dictionaries/*.xml; do
   name=$(basename "$dict" .xml)
   echo "Validating $name..."
-  dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+  dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
     --dictionary "$dict" \
     --words "words/$name.json" \
     --sentences "sentences/$name.json" || exit 1
@@ -93,7 +93,7 @@ echo "All validations passed"
 ```bash
 # 1. Make changes to dictionary.xml
 # 2. Quick test
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   -d dictionary.xml -w words.json -s sentences.json
 
 # 3. Run tests
@@ -106,7 +106,7 @@ dotnet test
 
 ```bash
 # Add temporary debug output to DeclesionBuilder.GetWord, then:
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   -d dictionary.xml -w words.json -s sentences.json 2>&1 | head -50
 ```
 
@@ -114,10 +114,10 @@ dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj --
 
 ```bash
 # Publish
-dotnet publish PolyglotLangageValidator/PolyglotLangageValidator.csproj -c Release -r linux-x64 --self-contained true -o ./publish
+dotnet publish PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -c Release -r linux-x64 --self-contained true -o ./publish
 
 # Run published
-./publish/PolyglotLangageValidator \
+./publish/PolyglotLanguageValidator \
   --dictionary dictionary.xml \
   --words words.json \
   --sentences sentences.json
@@ -132,16 +132,16 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
-COPY ["PolyglotLangageValidator/PolyglotLangageValidator.csproj", "PolyglotLangageValidator/"]
-RUN dotnet restore "PolyglotLangageValidator/PolyglotLangageValidator.csproj"
+COPY ["PolyglotLanguageValidator/PolyglotLanguageValidator.csproj", "PolyglotLanguageValidator/"]
+RUN dotnet restore "PolyglotLanguageValidator/PolyglotLanguageValidator.csproj"
 COPY . .
-WORKDIR "/src/PolyglotLangageValidator"
+WORKDIR "/src/PolyglotLanguageValidator"
 RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "PolyglotLangageValidator.dll"]
+ENTRYPOINT ["dotnet", "PolyglotLanguageValidator.dll"]
 ```
 
 ```bash
@@ -158,7 +158,7 @@ docker run --rm -v $(pwd)/data:/data polyglot-validator \
 ## PowerShell (Windows)
 
 ```powershell
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- `
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- `
   --dictionary dictionary.xml `
   --words words.json `
   --sentences sentences.json

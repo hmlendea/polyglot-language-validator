@@ -14,7 +14,7 @@
 dotnet build PolyglotLanguageValidator.slnx
 
 # Build specific project
-dotnet build PolyglotLangageValidator/PolyglotLangageValidator.csproj
+dotnet build PolyglotLanguageValidator/PolyglotLanguageValidator.csproj
 
 # Build tests
 dotnet build PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitTests.csproj
@@ -22,8 +22,8 @@ dotnet build PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitT
 
 ### Build outputs
 
-- `PolyglotLangageValidator/bin/Debug/net10.0/PolyglotLangageValidator` — Executable
-- `PolyglotLangageValidator/bin/Debug/net10.0/*.dll` — Dependencies
+- `PolyglotLanguageValidator/bin/Debug/net10.0/PolyglotLanguageValidator` — Executable
+- `PolyglotLanguageValidator/bin/Debug/net10.0/*.dll` — Dependencies
 - `PolyglotLanguageValidator.UnitTests/bin/Debug/net10.0/*.dll` — Test assemblies
 
 ## Test
@@ -80,12 +80,12 @@ The `release.sh` script downloads and executes a shared release script from `hml
 
 ```bash
 # Framework-dependent (requires .NET 10 runtime)
-dotnet publish PolyglotLangageValidator/PolyglotLangageValidator.csproj -c Release -o ./publish
+dotnet publish PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -c Release -o ./publish
 
 # Self-contained (includes runtime)
-dotnet publish PolyglotLangageValidator/PolyglotLangageValidator.csproj -c Release -r linux-x64 --self-contained true -o ./publish/linux-x64
-dotnet publish PolyglotLangageValidator/PolyglotLangageValidator.csproj -c Release -r win-x64 --self-contained true -o ./publish/win-x64
-dotnet publish PolyglotLangageValidator/PolyglotLangageValidator.csproj -c Release -r osx-x64 --self-contained true -o ./publish/osx-x64
+dotnet publish PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -c Release -r linux-x64 --self-contained true -o ./publish/linux-x64
+dotnet publish PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -c Release -r win-x64 --self-contained true -o ./publish/win-x64
+dotnet publish PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -c Release -r osx-x64 --self-contained true -o ./publish/osx-x64
 ```
 
 ### Runtime requirements
@@ -151,7 +151,7 @@ Steps:
 
 ## Project configuration
 
-### PolyglotLangageValidator.csproj
+### PolyglotLanguageValidator.csproj
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -185,7 +185,7 @@ Steps:
     <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../PolyglotLangageValidator/PolyglotLangageValidator.csproj" />
+    <ProjectReference Include="../PolyglotLanguageValidator/PolyglotLanguageValidator.csproj" />
   </ItemGroup>
 </Project>
 ```
@@ -194,13 +194,13 @@ Steps:
 
 ```xml
 <Solution>
-  <Project Path="PolyglotLangageValidator/PolyglotLangageValidator.csproj" />
+  <Project Path="PolyglotLanguageValidator/PolyglotLanguageValidator.csproj" />
   <Project Path="PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitTests.csproj" />
 </Solution>
 ```
 
 ## Known issues
 
-1. **Project folder typo** — `PolyglotLangageValidator` (missing 'u' in Language) — preserved for compatibility
+1. **Project folder typo** — `PolyglotLanguageValidator` (missing 'u' in Language) — preserved for compatibility
 2. **No nullable enable** — Projects don't have `<Nullable>enable</Nullable>` in csproj
 3. **No implicit usings** — `<ImplicitUsings>disable</ImplicitUsings>` not set (uses SDK defaults)

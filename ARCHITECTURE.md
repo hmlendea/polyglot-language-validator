@@ -172,8 +172,8 @@ The principal runtime sequence is:
 ### Entry Layer
 
 Paths:
-- `PolyglotLangageValidator/Program.cs`
-- `PolyglotLangageValidator/Configuration/InputSettings.cs`
+- `PolyglotLanguageValidator/Program.cs`
+- `PolyglotLanguageValidator/Configuration/InputSettings.cs`
 
 Responsibilities:
 - Parse and validate command-line arguments
@@ -187,8 +187,8 @@ Boundary rules:
 ### Validation Layer
 
 Paths:
-- `PolyglotLangageValidator/Service/LanguageValidator.cs`
-- `PolyglotLangageValidator/Service/ILanguageValidator.cs`
+- `PolyglotLanguageValidator/Service/LanguageValidator.cs`
+- `PolyglotLanguageValidator/Service/ILanguageValidator.cs`
 
 Responsibilities:
 - Iterate sentences from repository
@@ -202,8 +202,8 @@ Boundary rules:
 ### Building Layer
 
 Paths:
-- `PolyglotLangageValidator/Service/DeclesionBuilder.cs`
-- `PolyglotLangageValidator/Service/IDeclesionBuilder.cs`
+- `PolyglotLanguageValidator/Service/DeclesionBuilder.cs`
+- `PolyglotLanguageValidator/Service/IDeclesionBuilder.cs`
 
 Responsibilities:
 - Build constructed words by applying declension rules
@@ -217,9 +217,9 @@ Boundary rules:
 ### Parsing Layer
 
 Paths:
-- `PolyglotLangageValidator/Service/LanguageParser.cs`
-- `PolyglotLangageValidator/Service/ILanguageParser.cs`
-- `PolyglotLangageValidator/Models/Polyglot/`
+- `PolyglotLanguageValidator/Service/LanguageParser.cs`
+- `PolyglotLanguageValidator/Service/ILanguageParser.cs`
+- `PolyglotLanguageValidator/Models/Polyglot/`
 
 Responsibilities:
 - Load and deserialise Polyglot dictionary XML
@@ -245,9 +245,9 @@ Boundary rules:
 ### Model Layer
 
 Paths:
-- `PolyglotLangageValidator/Models/Word.cs`
-- `PolyglotLangageValidator/Models/Sentence.cs`
-- `PolyglotLangageValidator/Models/Polyglot/*.cs`
+- `PolyglotLanguageValidator/Models/Word.cs`
+- `PolyglotLanguageValidator/Models/Sentence.cs`
+- `PolyglotLanguageValidator/Models/Polyglot/*.cs`
 
 Responsibilities:
 - Data transfer objects for JSON serialisation
@@ -450,7 +450,7 @@ dotnet test PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitTe
 Build verification:
 
 ```bash
-dotnet build PolyglotLangageValidator/PolyglotLangageValidator.csproj
+dotnet build PolyglotLanguageValidator/PolyglotLanguageValidator.csproj
 ```
 
 Material coverage gaps:
@@ -497,17 +497,17 @@ The extension must preserve:
 
 | Area | Path |
 |------|------|
-| Entry Point | `PolyglotLangageValidator/Program.cs` |
-| Configuration | `PolyglotLangageValidator/Configuration/InputSettings.cs` |
-| Validation Layer | `PolyglotLangageValidator/Service/LanguageValidator.cs` |
-| Validation Interface | `PolyglotLangageValidator/Service/ILanguageValidator.cs` |
-| Building Layer | `PolyglotLangageValidator/Service/DeclesionBuilder.cs` |
-| Building Interface | `PolyglotLangageValidator/Service/IDeclesionBuilder.cs` |
-| Parsing Layer | `PolyglotLangageValidator/Service/LanguageParser.cs` |
-| Parsing Interface | `PolyglotLangageValidator/Service/ILanguageParser.cs` |
-| Domain Models | `PolyglotLangageValidator/Models/Word.cs`, `Sentence.cs` |
-| Polyglot Models | `PolyglotLangageValidator/Models/Polyglot/*.cs` |
-| Exceptions | `PolyglotLangageValidator/Exceptions/MismatchingValueException.cs` |
+| Entry Point | `PolyglotLanguageValidator/Program.cs` |
+| Configuration | `PolyglotLanguageValidator/Configuration/InputSettings.cs` |
+| Validation Layer | `PolyglotLanguageValidator/Service/LanguageValidator.cs` |
+| Validation Interface | `PolyglotLanguageValidator/Service/ILanguageValidator.cs` |
+| Building Layer | `PolyglotLanguageValidator/Service/DeclesionBuilder.cs` |
+| Building Interface | `PolyglotLanguageValidator/Service/IDeclesionBuilder.cs` |
+| Parsing Layer | `PolyglotLanguageValidator/Service/LanguageParser.cs` |
+| Parsing Interface | `PolyglotLanguageValidator/Service/ILanguageParser.cs` |
+| Domain Models | `PolyglotLanguageValidator/Models/Word.cs`, `Sentence.cs` |
+| Polyglot Models | `PolyglotLanguageValidator/Models/Polyglot/*.cs` |
+| Exceptions | `PolyglotLanguageValidator/Exceptions/MismatchingValueException.cs` |
 | Unit Tests | `PolyglotLanguageValidator.UnitTests/` |
 | Documentation | `docs/` |
 

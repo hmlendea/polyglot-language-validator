@@ -36,7 +36,7 @@
 ## Dependency graph
 
 ```
-PolyglotLangageValidator
+PolyglotLanguageValidator
 ├── Microsoft.Extensions.DependencyInjection
 ├── NuciCLI.Arguments
 └── NuciDAL
@@ -47,7 +47,7 @@ PolyglotLanguageValidator.UnitTests
 ├── NUnit
 ├── NUnit3TestAdapter
 ├── Moq
-└── PolyglotLangageValidator (project reference)
+└── PolyglotLanguageValidator (project reference)
 ```
 
 ## Version policy
@@ -69,7 +69,7 @@ PolyglotLanguageValidator.UnitTests
 dotnet list package --outdated
 
 # Update specific
-dotnet add PolyglotLangageValidator/PolyglotLangageValidator.csproj package NuciDAL --version 3.0.2
+dotnet add PolyglotLanguageValidator/PolyglotLanguageValidator.csproj package NuciDAL --version 3.0.2
 
 # Update all (interactive)
 dotnet outdated

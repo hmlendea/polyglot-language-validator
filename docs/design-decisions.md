@@ -88,7 +88,7 @@
 
 ## 9. Project folder name typo preserved
 
-**Decision**: Keep `PolyglotLangageValidator` (missing 'u').
+**Decision**: Keep `PolyglotLanguageValidator` (missing 'u').
 
 **Rationale**:
 - Breaking change for existing clones/builds

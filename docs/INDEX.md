@@ -89,7 +89,7 @@
 ## Maintenance metadata
 
 - **Generated**: 2025 (during documentation initiative)
-- **Source of truth**: Source code in `PolyglotLangageValidator/` and `PolyglotLanguageValidator.UnitTests/`
+- **Source of truth**: Source code in `PolyglotLanguageValidator/` and `PolyglotLanguageValidator.UnitTests/`
 - **Update trigger**: Any architectural, behavioural, or interface change
 - **Review cadence**: Per PR affecting documented areas
 - **Owner**: Repository maintainers

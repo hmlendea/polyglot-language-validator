@@ -11,7 +11,7 @@ Exception
 
 ## MismatchingValueException
 
-**Location**: `PolyglotLangageValidator/Exceptions/MismatchingValueException.cs`
+**Location**: `PolyglotLanguageValidator/Exceptions/MismatchingValueException.cs`
 
 **Purpose**: Single sentence validation failure.
 

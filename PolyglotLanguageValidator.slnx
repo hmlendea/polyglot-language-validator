@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="PolyglotLangageValidator/PolyglotLangageValidator.csproj" />
+  <Project Path="PolyglotLanguageValidator/PolyglotLanguageValidator.csproj" />
   <Project Path="PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitTests.csproj" />
 </Solution>

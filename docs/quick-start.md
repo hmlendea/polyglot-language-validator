@@ -88,7 +88,7 @@ You need three files:
 ## Run validation
 
 ```bash
-dotnet run --project PolyglotLangageValidator/PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator/PolyglotLanguageValidator.csproj -- \
   --dictionary dictionary.xml \
   --words words.json \
   --sentences sentences.json
