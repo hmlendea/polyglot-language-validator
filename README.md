@@ -241,6 +241,10 @@ When contributing:
 
 Polyglot Language Validator processes all data locally on the user's machine with no network communication, telemetry, or external data transfers. See [PRIVACY.md](./PRIVACY.md) for details.
 
+## 🔒 Security
+
+Polyglot Language Validator runs locally with no network communication or external attack surface. See [SECURITY.md](./SECURITY.md) for vulnerability reporting and supported versions.
+
 ## License
 
 Licensed under the GNU General Public License v3.0 or later.
