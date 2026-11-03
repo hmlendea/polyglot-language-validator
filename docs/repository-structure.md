@@ -8,8 +8,8 @@ polyglot-language-validator/
 ├── PolyglotLanguageValidator.slnx
 ├── README.md
 ├── release.sh
-├── PolyglotLangageValidator/          # Main application
-│   ├── PolyglotLangageValidator.csproj
+├── PolyglotLanguageValidator/          # Main application
+│   ├── PolyglotLanguageValidator.csproj
 │   ├── Program.cs
 │   ├── Configuration/
 │   │   └── InputSettings.cs
@@ -56,9 +56,9 @@ polyglot-language-validator/
 
 ## Project organisation
 
-### PolyglotLangageValidator
+### PolyglotLanguageValidator
 
-Main console application. Note: project folder name contains a typo ("Langage" instead of "Language"), preserved for historical reasons.
+Main console application. Note: project folder name contains a typo ("Language" instead of "Language"), preserved for historical reasons.
 
 - **Configuration/** — CLI argument parsing and settings
 - **Exceptions/** — Domain-specific exception types
@@ -78,12 +78,12 @@ Unit test project mirroring the main project structure:
 
 | Folder | Namespace |
 |---|---|
-| `PolyglotLangageValidator/` | `PolyglotLanguageValidator` |
-| `PolyglotLangageValidator/Configuration/` | `PolyglotLanguageValidator.Configuration` |
-| `PolyglotLangageValidator/Exceptions/` | `PolyglotLanguageValidator.Exceptions` |
-| `PolyglotLangageValidator/Models/` | `PolyglotLanguageValidator.Models` |
-| `PolyglotLangageValidator/Models/Polyglot/` | `PolyglotLanguageValidator.Models.Polyglot` |
-| `PolyglotLangageValidator/Service/` | `PolyglotLanguageValidator.Service` |
+| `PolyglotLanguageValidator/` | `PolyglotLanguageValidator` |
+| `PolyglotLanguageValidator/Configuration/` | `PolyglotLanguageValidator.Configuration` |
+| `PolyglotLanguageValidator/Exceptions/` | `PolyglotLanguageValidator.Exceptions` |
+| `PolyglotLanguageValidator/Models/` | `PolyglotLanguageValidator.Models` |
+| `PolyglotLanguageValidator/Models/Polyglot/` | `PolyglotLanguageValidator.Models.Polyglot` |
+| `PolyglotLanguageValidator/Service/` | `PolyglotLanguageValidator.Service` |
 | `PolyglotLanguageValidator.UnitTests/` | `PolyglotLanguageValidator.UnitTests` |
 
 ## File naming conventions
@@ -95,6 +95,6 @@ Unit test project mirroring the main project structure:
 
 ## Build outputs
 
-- `PolyglotLangageValidator/bin/Debug/net10.0/` — Application binaries
+- `PolyglotLanguageValidator/bin/Debug/net10.0/` — Application binaries
 - `PolyglotLanguageValidator.UnitTests/bin/Debug/net10.0/` — Test binaries
 - Root `bin/` and `obj/` — Solution-level build artifacts

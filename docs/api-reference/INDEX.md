@@ -13,7 +13,7 @@ The "API" consists of:
 ### Command
 
 ```bash
-dotnet run --project PolyglotLangageValidator.csproj -- \
+dotnet run --project PolyglotLanguageValidator.csproj -- \
     --dictionary <path> \
     --words <path> \
     --sentences <path>

@@ -2,7 +2,7 @@
 
 ## Program
 
-**Location:** `PolyglotLangageValidator/Program.cs`
+**Location:** `PolyglotLanguageValidator/Program.cs`
 
 **Namespace:** `PolyglotLanguageValidator`
 
@@ -58,7 +58,7 @@ new ServiceCollection()
 
 ## InputSettings
 
-**Location:** `PolyglotLangageValidator/Configuration/InputSettings.cs`
+**Location:** `PolyglotLanguageValidator/Configuration/InputSettings.cs`
 
 **Namespace:** `PolyglotLanguageValidator.Configuration`
 
@@ -98,7 +98,7 @@ public InputSettings(string[] args)
 
 ## MismatchingValueException
 
-**Location:** `PolyglotLangageValidator/Exceptions/MismatchingValueException.cs`
+**Location:** `PolyglotLanguageValidator/Exceptions/MismatchingValueException.cs`
 
 **Namespace:** `PolyglotLanguageValidator.Exceptions`
 

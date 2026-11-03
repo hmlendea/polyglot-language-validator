@@ -2,7 +2,7 @@
 
 ## LanguageValidator
 
-**Location:** `PolyglotLangageValidator/Service/LanguageValidator.cs`
+**Location:** `PolyglotLanguageValidator/Service/LanguageValidator.cs`
 
 **Namespace:** `PolyglotLanguageValidator.Service`
 
@@ -71,7 +71,7 @@ public void Test()
 
 ## DeclesionBuilder
 
-**Location:** `PolyglotLangageValidator/Service/DeclesionBuilder.cs`
+**Location:** `PolyglotLanguageValidator/Service/DeclesionBuilder.cs`
 
 **Namespace:** `PolyglotLanguageValidator.Service`
 
@@ -185,7 +185,7 @@ The `ruleCombination` string is built by:
 
 ## LanguageParser
 
-**Location:** `PolyglotLangageValidator/Service/LanguageParser.cs`
+**Location:** `PolyglotLanguageValidator/Service/LanguageParser.cs`
 
 **Namespace:** `PolyglotLanguageValidator.Service`
 
