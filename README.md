@@ -236,6 +236,12 @@ See the [contributing guidelines](./CONTRIBUTING.md) for details on how to repor
 
 See the [Code of Conduct](./CODE_OF_CONDUCT.md) for the standards of conduct expected in all project spaces.
 
+## 🏗️ Architecture
+
+Polyglot Language Validator follows a layered architecture with dependency injection and repository pattern. The system separates concerns across entry, validation, building, parsing, data access, and model layers.
+
+See the [Architecture](./ARCHITECTURE.md) for the system context, principal components, runtime flows, ownership boundaries, dependencies, constraints, and extension points.
+
 ## Documentation
 
 - [Documentation index](docs/INDEX.md) — Complete documentation catalogue
