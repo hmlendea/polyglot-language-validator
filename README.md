@@ -214,6 +214,8 @@ Run the NUnit unit-test project with:
 
 ```bash
  dotnet test PolyglotLanguageValidator.UnitTests/PolyglotLanguageValidator.UnitTests.csproj
+```
+
 ## Contributing
 
 Contributions are welcome.
@@ -238,6 +240,10 @@ When contributing:
 ## 🛡️ Privacy and Data
 
 Polyglot Language Validator processes all data locally on the user's machine with no network communication, telemetry, or external data transfers. See [PRIVACY.md](./PRIVACY.md) for details.
+
+## 🔒 Security
+
+Polyglot Language Validator runs locally with no network communication or external attack surface. See [SECURITY.md](./SECURITY.md) for vulnerability reporting and supported versions.
 
 ## License
 
