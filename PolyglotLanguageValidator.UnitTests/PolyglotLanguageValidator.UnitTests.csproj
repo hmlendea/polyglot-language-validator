@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../PolyglotLangageValidator/PolyglotLangageValidator.csproj" />
+    <ProjectReference Include="../PolyglotLanguageValidator/PolyglotLangageValidator.csproj" />
   </ItemGroup>
 
 </Project>
