@@ -235,6 +235,10 @@ When contributing:
 - [Polyglot Language Validator](https://github.com/hmlendea/polyglot-language-validator) for the validator utility
 - [Polyglot Language Validate](https://github.com/hmlendea/polyglot-language-validate) for the GitHub Action
 
+## 🛡️ Privacy and Data
+
+Polyglot Language Validator processes all data locally on the user's machine with no network communication, telemetry, or external data transfers. See [PRIVACY.md](./PRIVACY.md) for details.
+
 ## License
 
 Licensed under the GNU General Public License v3.0 or later.
